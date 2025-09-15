@@ -6,8 +6,10 @@ interface TestInterface {
     }
 }
 
+
 class ChildOfInterface(val x: Int): TestInterface{
-    override fun f1(): String = "f1 called"
+    override fun f1(): String = "f1 called."
     override fun f2(a: String) {println("f2 called. a=$a")}
+    //f2내부에서 출력. 리턴 X -> Unit(void랑 같은 의미)
     fun f4(): String = "f4 called. Value x=$x"
 }
