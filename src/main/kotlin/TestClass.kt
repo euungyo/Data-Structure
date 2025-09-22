@@ -14,21 +14,21 @@ import java.io.Closeable
 
 
 
-
-class TestClass<T>{
-    fun fun1(x:T){
-        println(x.toString())
-    }
-
-    fun<T: Closeable> fun2(x:T){
-        x.close()
-    }
-
-    fun<T> fun3(x:T) where T: Closeable, T: Iterable<T> {
-        x.close()
-        var it=x.iterator()
-    }
-}
+//
+//class TestClass<T>{
+//    fun fun1(x:T){
+//        println(x.toString())
+//    }
+//
+//    fun<T: Closeable> fun2(x:T){
+//        x.close()
+//    }
+//
+//    fun<T> fun3(x:T) where T: Closeable, T: Iterable<T> {
+//        x.close()
+//        var it=x.iterator()
+//    }
+//}
 
 //
 //class Man(
@@ -46,3 +46,40 @@ class TestClass<T>{
 //    val strength : Int = 50
 //    get
 //}
+
+class Flower private constructor(val name: String){
+    companion object bud{
+        private var numFlowers: Int = 0
+        fun bloom(name: String): Flower?{
+            if (numFlowers>0)
+                return null
+            numFlowers+=1
+            return Flower(name)
+        }
+    }
+
+    override fun toString(): String{
+        return "Flower '$name'"
+    }
+}
+
+class Outer{
+    val ov = 5
+    class Nested{
+        val nv = 10
+        fun greeting() = "Nested"
+        fun accessCompanionMethod(){
+            println(country)
+            getSomething()
+        }
+    }
+    companion object {
+        const val country = "Korea"
+        fun getSomething() = println("Get Country")
+            fun call_nested_greeting(){Outer.Nested().greeting()}
+            fun outside(){
+                val msg = Nested().greeting()
+                println(Nested().nv)
+            }
+        }
+    }
