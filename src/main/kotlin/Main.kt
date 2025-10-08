@@ -267,21 +267,46 @@ class Main {
 
 
 
-fun makeBinaryTree(): BinaryNode<Int> {
-    val zero = BinaryNode(0)
-    val one = BinaryNode(1)
-    val five = BinaryNode(5)
-    val seven = BinaryNode(7)
-    val eight = BinaryNode(8)
-    val nine = BinaryNode(9)
+//fun makeBinaryTree(): BinaryNode<Int> {
+//    val zero = BinaryNode(0)
+//    val one = BinaryNode(1)
+//    val five = BinaryNode(5)
+//    val seven = BinaryNode(7)
+//    val eight = BinaryNode(8)
+//    val nine = BinaryNode(9)
+//    seven.leftChild = one
+//    one.leftChild = zero
+//    one.rightChild = five
+//    seven.rightChild = nine
+//    nine.leftChild = eight
+//    val tree = seven
+//    return tree
+//}
+//fun main(){
+//    val tree = makeBinaryTree()
+//}
+
+
+
+fun makeAVLTree(): AVLNode<Int>{
+    val one = AVLNode(1)
+    val seven = AVLNode(7)
+    val eight = AVLNode(8)
+    val nine = AVLNode(9)
+    val eleven = AVLNode(11)
+    val ten = AVLNode(10)
+    val fifteen =  AVLNode(15)
     seven.leftChild = one
-    one.leftChild = zero
-    one.rightChild = five
     seven.rightChild = nine
     nine.leftChild = eight
-    val tree = seven
-    return tree
+    nine.rightChild = eleven
+    eleven.leftChild = ten
+    eleven.rightChild = fifteen
+    return seven
 }
+
 fun main(){
-    val tree = makeBinaryTree()
+    var tree = makeAVLTree()
+    println(tree)
+    println("height: ${tree.height()}")
 }
