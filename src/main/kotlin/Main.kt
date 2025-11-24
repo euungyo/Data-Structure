@@ -34,14 +34,14 @@ class Main {
 
 
 
-fun main(){
-    var o1: ChildOfInterface = ChildOfInterface(10)
-//    println(o1)
-//    println(o1.f1())
-    println(o1.f2("A"))
-//    println(o1.f3("B"))
-//    println(o1.f4())
-}
+//fun main(){
+//    var o1: ChildOfInterface = ChildOfInterface(10)
+////    println(o1)
+////    println(o1.f1())
+//    println(o1.f2("A"))
+////    println(o1.f3("B"))
+////    println(o1.f4())
+//}
 
 
 
@@ -309,4 +309,23 @@ fun main(){
 //    var tree = makeAVLTree()
 //    println(tree)
 //    println("height: ${tree.height()}")
+//}
+//
+
+
+
+//fun f1(a: ArrayList<Int>?): Int{
+//    a?.add(a.size)
+//    a?.addAll(f2())
+//    return a.size
+//}
+//
+//fun f2(): ArrayList<Int>{
+//    return arrayListOf(10,20)
+//}
+//fun main(){
+//    val b = arrayListOf(5)
+//    println(f1(b))
+//    println(b)
+//    println(f1(null))
 //}
